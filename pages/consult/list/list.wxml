@@ -1,0 +1,98 @@
+<view class="container">
+  <navigationBar title="教师列表"></navigationBar>
+
+  <!-- 搜索 -->
+  <view class="search">
+    <view class="searchLeft" bindtap="goToSearch">
+      <icon class="icon-small" type="search" size="14" color="#666666"></icon><view>填报志愿</view>
+    </view>
+    <view class="kefu">
+      <view>
+        <image src="/img/public/kefu.png"></image>
+        <view>客服</view>
+        <button open-type="contact" send-message-title="社区" show-message-card="true"></button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 筛选 -->
+  <view class="screen">
+    <view class="{{showIndex==1}}" bindtap="showFen" data-i="1">
+      <view>全部</view>
+      <image wx:if="{{showIndex==1}}" src="/img/consult/jian2.png"></image>
+      <image wx:else src="/img/consult/jian1.png"></image>
+    </view>
+    <view class="{{showIndex==2}}" bindtap="showFen" data-i="2">
+      <view>地区</view>
+      <image wx:if="{{showIndex==2}}" src="/img/consult/jian2.png"></image>
+      <image wx:else src="/img/consult/jian1.png"></image>
+    </view>
+    <view class="{{showIndex==3}}" bindtap="showFen" data-i="3">
+      <view>价格</view>
+      <image wx:if="{{showIndex==3}}" src="/img/consult/jian2.png"></image>
+      <image wx:else src="/img/consult/jian1.png"></image>
+    </view>
+    <view class="{{showIndex==4}}" bindtap="showFen" data-i="4">
+      <view>筛选</view>
+      <image wx:if="{{showIndex==4}}" src="/img/consult/jian2.png"></image>
+      <image wx:else src="/img/consult/jian1.png"></image>
+    </view>
+  </view>
+
+  <view wx:if="{{showIndex>0}}" class="fenlei" style="height: calc(100% - {{statusH+titleH}}px - 205rpx);top: {{statusH+titleH}}px + 205rpx;">
+    <view class="fenmain" wx:if="{{showIndex==1||showIndex==3}}">
+      <view class="title">{{showIndex==1?'服务类别':'价格'}}</view>
+      <view class="labels" wx:if="{{showIndex==1}}">
+        <view bindtap="choice1" data-i="{{item.id}}" class="{{index1==item.id}}" wx:for="{{fuwuList}}" wx:key="i">{{item.iconName}}</view>
+      </view>
+      <view class="labels price" wx:else>
+        <view bindtap="choice3" data-i="{{index}}" class="{{index3==index}}" wx:for="{{priceList}}" wx:key="i">{{item.name}}</view>
+      </view>
+    </view>
+
+    <view class="fenmain address" wx:if="{{showIndex==2}}">
+      <view class="left">
+        <view bindtap="choiceCountry" data-i="{{item.id}}" wx:for="{{country}}" class="{{countryId==item.id}}" wx:key="i">{{item.dictName}}</view>
+      </view>
+      <view class="right">
+        <view class="labels">
+          <view bindtap="choiceAddr" data-i="{{item.id}}" data-j="{{item.parentId}}" wx:for="{{addrList}}" class="{{addrId==item.id}}" wx:key="i">{{item.dictName}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="fenmain" wx:if="{{showIndex==4}}">
+      <view class="title">咨询方式</view>
+      <view class="labels">
+        <view bindtap="choice4" data-i="{{item.id}}" class="{{index4==item.id}}" wx:for="{{typeList}}" wx:key="i">{{item.methodName}}</view>
+      </view>
+      <view class="title">性别</view>
+      <view class="labels">
+        <view bindtap="choice5" data-i="{{item.id}}" class="{{index5==item.id}}" wx:for="{{sexList}}" wx:key="i">{{item.name}}</view>
+      </view>
+      <view class="title">专业</view>
+      <view class="labels">
+        <view bindtap="choice6" data-i="{{item.id}}" class="{{index6==item.id}}" wx:for="{{majorList}}" wx:key="i">{{item.dictName}}</view>
+      </view>
+
+      <view class="btns">
+        <view bindtap="reset" class="reset">重置</view><view bindtap="ensure" class="ensure">确定</view>
+      </view>
+    </view>
+
+    <view class="close" bindtap="close"></view>
+  </view>
+
+  <!-- 列表 -->
+  <scroll-view style="height: calc(100% - {{statusH+titleH}}px - 205rpx);" scroll-y="true" bindscrolltolower="selList" wx:if="{{lists.length>0}}" class="main">
+    
+    <view wx:for="{{lists}}" class="teacher" wx:key="i">  
+      <teacher bindtap="goTea" data-item="{{item}}" type="3" msg="{{item}}"></teacher>
+    </view>
+  </scroll-view>
+
+  <view class="noData" wx:else>
+    <image src="/img/public/noData.png"></image>
+    <view>没有查到</view>
+  </view>
+</view>

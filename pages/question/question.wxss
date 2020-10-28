@@ -1,0 +1,138 @@
+.container{
+  height: 100%;
+}
+
+.fenlei{
+  padding: 0 30rpx;
+  padding-top: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fenLists{
+  display: flex;
+  align-items: flex-end;
+}
+
+.fenLists view{
+  font-size: 32rpx;
+  color: #000000;
+  font-weight: 500;
+  margin-right: 36rpx;
+  position: relative;
+}
+
+.fenLists view.true{
+  font-weight: bold;
+  font-size: 36rpx;
+}
+
+.fenLists > view > view{
+  position: absolute;
+  bottom: 8rpx;
+  left: 0;
+  width: 100%;
+  height: 12rpx;
+  background-color: #FFAC2C;
+  z-index: -1;
+}
+
+/* 搜索 */
+.search{
+  padding: 25rpx 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searchLeft{
+  width: 100%;
+  padding-left: 45rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  background-color: #FAFAFA;
+  border-radius: 40rpx;
+  color: #666666;
+  font-size: 25rpx;
+  border: 1rpx solid #E7E8E8;
+}
+
+.searchLeft view{
+  margin-left: 20rpx;
+}
+
+.kefu > view{
+  position: relative;
+}
+
+.kefu button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.kefu image{
+  width: 34rpx;
+  height: 33rpx;
+}
+
+.kefu view{
+  color: #666666;
+  font-size: 18rpx;
+}
+
+/* banner轮播图 */
+.banner{
+  width: 690rpx;
+  height: 280rpx;
+  margin: 0 auto;
+}
+
+.bannerImg{
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.titleList{
+  height: 146rpx;
+  margin-top: 25rpx;
+  margin-bottom: 20rpx;
+}
+
+.titleAll{
+  display: flex;
+  padding-left: 30rpx;
+}
+
+.titleAll image{
+  flex-shrink: 0;
+  width: 189rpx;
+  margin-right: 18rpx;
+}
+
+.lists{
+  padding: 0 30rpx;
+}
+
+.list{
+  margin-bottom: 20rpx;
+}
+
+.video{
+  padding: 0 30rpx;
+  margin-top: 25rpx;
+}
+
+.nodata{
+  font-size: 36rpx;
+  text-align: center;
+  padding-top: 200rpx;
+  font-weight: bold;
+}
+

@@ -1,0 +1,34 @@
+<view class="container">
+  <navigationBar title="评价"></navigationBar>
+
+  <view class="main">
+    <view class="tea">
+      <image src="{{imgUrl+msg.headUrl}}"></image>
+      <view>
+        <view class="name">{{msg.teacherName}}</view>
+        <view class="zixun">{{msg.methodName}}×{{msg.askNum}}</view>
+      </view>
+    </view>
+
+    <view class="dafen">
+      <view class="title">咨询品质:</view>
+      <view class="xings">
+        <image bindtap="pingji1" data-i="{{index}}" wx:for="{{qualityScore}}" wx:key="i" src="/img/public/xing2.png"></image>
+        <image bindtap="pingji1" data-i="{{qualityScore+index}}" wx:for="{{5 - qualityScore}}" wx:key="i" src="/img/public/xing1.png"></image>
+      </view>
+      <view class="title">沟通态度:</view>
+      <view class="xings">
+        <image bindtap="pingji2" data-i="{{index}}" wx:for="{{attitudeScore}}" wx:key="i" src="/img/public/xing2.png"></image>
+        <image bindtap="pingji2" data-i="{{attitudeScore+index}}" wx:for="{{5 - attitudeScore}}" wx:key="i" src="/img/public/xing1.png"></image>
+      </view>
+    </view>
+
+    <textarea value="{{content}}" bindinput="getNei" placeholder-style="color:#CCCCCC;" placeholder="请写下您的感受吧，您的评价对其他学员都是很重要的参考~~" />
+
+    <view class="labels">
+      <view bindtap="choiceLabel" data-i="{{index}}" wx:for="{{labelList}}" class="{{item.choice}}">{{item.dictName}}</view>
+    </view>
+  </view>
+
+  <view bindtap="tijiao" class="tijiao">提交</view>
+</view>

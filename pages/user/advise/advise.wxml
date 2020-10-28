@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="container">
+  <navigationBar title="投诉与建议"></navigationBar>
+  <view class="main">
+    <view class="text1">反馈内容</view>
+    <textarea bindinput="getNei" placeholder-style="color:#CCCCCC;" placeholder="请输入您想反馈的内容~" />
+    <view class="text1">联系方式</view>
+    <input bindinput="getLian" placeholder-style="color:#CCCCCC;" placeholder="请输入您的手机号或者微信号码~"/>
+    <view bindtap="tijiao" class="btn">提交</view>
+  </view>
+  
+</view>

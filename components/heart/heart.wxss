@@ -1,0 +1,81 @@
+.heart{
+  width: 100%;
+  padding: 38rpx 33rpx;
+  background-color: #fff;
+  border-radius: 9rpx;
+}
+
+.yin{
+  width: 44rpx;
+  height: 40rpx;
+}
+
+.content{
+  margin-top: 35rpx;
+  font-size: 27rpx;
+  color: #333333;
+  line-height: 40rpx;
+  margin-bottom: 35rpx;
+  text-indent: 2em;
+}
+
+.bot{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 24rpx;
+  color: #333333;
+  margin-bottom: 40rpx;
+}
+
+.tea{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 91rpx;
+  padding: 0 40rpx;
+  border-radius: 11px;
+  background-color: #FAFAFA;
+}
+
+.tea > view{
+  display: flex;
+  align-items: center;
+}
+
+.header{
+  width:60rpx;
+  height:60rpx;
+  border-radius: 30rpx;
+  margin-right: 25rpx;
+}
+
+.name{
+  font-size:25rpx;
+  color: #333333;
+  font-weight: bold;
+  margin-right: 20rpx;
+}
+
+.nums{
+  font-size:25rpx;
+  color: #666666;
+}
+
+.right{
+  width: 29rpx;
+  height: 29rpx;
+}
+
+.zan{
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 30rpx;
+}
+
+.zan image{
+  width: 22rpx;
+  height: 22rpx;
+}

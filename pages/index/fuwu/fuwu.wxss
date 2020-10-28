@@ -1,0 +1,32 @@
+.lists{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 35rpx;
+}
+
+.one{
+  width: 325rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 18rpx 18rpx 28rpx 18rpx;
+  margin-bottom: 22rpx;
+}
+
+.one image{
+  width: 100%;
+  margin-bottom: 15rpx;
+}
+
+.biao{
+  font-size: 24rpx;
+  color: #333333;
+  font-weight: bold;
+}
+
+.text{
+  font-size: 22rpx;
+  color: #666666;
+  line-height: 31rpx;
+  margin-top: 12rpx;
+}

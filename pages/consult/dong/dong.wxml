@@ -1,0 +1,15 @@
+<view class="container">
+  <navigationBar title="全部动态"></navigationBar>
+
+  <!-- 列表 -->
+  <scroll-view style="height: calc(100% - {{statusH+titleH}}px);" scroll-y="true" bindscrolltolower="selData" wx:if="{{lists.length>0}}" class="main">
+    <view wx:for="{{lists}}" class="teacher" wx:key="i">  
+      <wenda type="6" msg="{{item}}"></wenda>
+    </view>
+  </scroll-view>
+
+  <view class="noData" wx:else>
+    <image src="/img/public/noData.png"></image>
+    <view>暂无动态</view>
+  </view>
+</view>

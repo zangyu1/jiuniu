@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="container">
+  <navigationBar title="新手指南"></navigationBar>
+  <image mode="widthFix" src="https://www.jiuniuwenjin.com:8080/pic/20201028/202010280938427146.png"></image>
+</view>

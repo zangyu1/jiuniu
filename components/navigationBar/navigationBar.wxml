@@ -1,0 +1,13 @@
+<!-- 占位内容 -->
+<view wx:if="{{opacity!=0}}" style='width: 100%;height: {{statusH+titleH}}px'></view>
+
+<!-- 真-标题栏内容部分 -->
+<view class='whole_header type{{type}}' style='background-color: rgba(244,247,249, {{opacity}});color: {{color}};'>
+  <view style='height: {{statusH}}px'></view>
+  <view class='header' style='height:{{titleH}}px;'>
+    <image wx:if="{{has_back}}" bindtap='goBack' src='/img/public/back{{type}}.png'></image>
+    <view wx:else class="right"></view>
+    <view class='title'>{{title}}</view>
+    <view class="right"></view>
+  </view>
+</view>

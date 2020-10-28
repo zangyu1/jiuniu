@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container">
+  <navigationBar title="搜索"></navigationBar>
+
+  <!-- 搜索 -->
+  <view class="search">
+    <view class="searchLeft">
+      <icon class="icon-small" type="search" size="14" color="#666666"></icon>
+      <input value="{{selTitle}}" bindinput="change" bindconfirm="selData" confirm-type="search" placeholder="填报志愿"></input>
+      <icon bindtap="cancel" class="icon-small" type="cancel" size="14" color="#CCCCCC"></icon>
+    </view>
+    <view class="kefu">
+      <view>
+        <image src="/img/public/kefu.png"></image>
+        <view>客服</view>
+        <button open-type="contact" send-message-title="社区" show-message-card="true"></button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 历史 -->
+  <view class="history" wx:if="{{!isSearch}}">
+    <view class="top"><view>历史搜索</view><image bindtap="del" src="/img/public/del.png"></image></view>
+    <view class="hLists">
+      <view wx:for="{{history}}" wx:key="i" bindtap="searHis" data-i="{{item}}">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="main" wx:if="{{isSearch}}" style="height: calc(100% - 130rpx - {{statusH + titleH}}px);">
+    <!-- 数据列表 -->
+    <scroll-view wx:if="{{lists.length>0}}" class="lists" scroll-y="true" lower-threshold="0" bindscrolltolower="selData">
+      <view class="list" wx:for="{{lists}}" wx:key="i">
+        <wenda bind:share="share" type="4" msg="{{item}}"></wenda>
+      </view>
+    </scroll-view>
+
+    <view wx:else class="nodata">
+      <image src="/img/public/nodata2.png"></image>
+      <view>抱歉，暂无相关搜索结果</view>
+      <view class="btn">回到首页</view>
+    </view>
+  </view>
+  
+</view>

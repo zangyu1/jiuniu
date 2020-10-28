@@ -1,0 +1,42 @@
+/**index.wxss**/
+.container{
+  height: 100%;
+}
+
+.main{
+  padding: 0 25rpx;
+}
+
+.text1{
+  font-size: 30rpx;
+  color: #333333;
+  font-weight: bold;
+  padding-top: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text1 .del{
+  font-size: 22rpx;
+  color: #989898;
+}
+
+.teacher{
+  width: 100%;
+  margin-top: 28rpx;
+}
+
+.noData{
+  text-align: center;
+  font-size: 27rpx;
+  color: #818692;
+  font-weight: bold;
+  padding-top: 400rpx;
+}
+
+.noData image{
+  width: 276rpx;
+  height: 156rpx;
+  margin-bottom: 60rpx;
+}

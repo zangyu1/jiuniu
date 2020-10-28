@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/question/question",
+    "pages/consult/consult",
+    "pages/user/user",
+    "pages/index/search/search",
+    "pages/index/fuwu/fuwu",
+    "pages/index/new/new",
+    "pages/index/why/why",
+    "pages/user/zixun/zixun",
+    "pages/user/ping/ping",
+    "pages/user/guan/guan",
+    "pages/user/zuji/zuji",
+    "pages/user/advise/advise",
+    "pages/question/detail/detail",
+    "pages/question/search/search",
+    "pages/consult/dong/dong",
+    "pages/consult/ping/ping",
+    "pages/consult/buy/buy",
+    "pages/consult/teacher/teacher",
+    "pages/user/evaluate/evaluate"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "selectedColor": "#002247",
+    "color": "#999999",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/footerBar/icon1-1.png",
+        "selectedIconPath": "img/footerBar/icon1-2.png"
+      },
+      {
+        "pagePath": "pages/question/question",
+        "text": "社区",
+        "iconPath": "img/footerBar/icon2-1.png",
+        "selectedIconPath": "img/footerBar/icon2-2.png"
+      },
+      {
+        "pagePath": "pages/consult/consult",
+        "text": "咨询",
+        "iconPath": "img/footerBar/icon3-1.png",
+        "selectedIconPath": "img/footerBar/icon3-2.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "img/footerBar/icon4-1.png",
+        "selectedIconPath": "img/footerBar/icon4-2.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "navigationBar": "./components/navigationBar/navigationBar",
+    "teacher": "./components/teacher/teacher",
+    "wenda": "./components/wenda/wenda",
+    "evaluate": "./components/evaluate/evaluate",
+    "zixun": "./components/zixun/zixun",
+    "heart": "./components/heart/heart",
+    "shipin": "./components/shipin/shipin"
+  },
+  "sitemapLocation": "sitemap.json"
+}

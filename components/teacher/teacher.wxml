@@ -1,0 +1,20 @@
+<view class="teacher teacher{{type}}">
+  <image class="header" bindtap="goTea" src="{{imgUrl+msg.headUrl}}"></image>
+  <view class="right">
+    <view class="top">
+      <view class="left" bindtap="goTea">
+        <view class="name">{{msg.teacherName}}</view><view class="nums">{{msg.showAskCount}}人咨询</view>
+        <!-- <view class="xian"></view><view class="expe">从业{{msg.workYear}}年</view> -->
+      </view>
+      <view wx:if="{{type==1}}" class="close" bindtap="del">取消关注</view>
+      <view wx:if="{{type==3}}" class="addr">{{msg.areaName}}</view>
+    </view>
+    <view class="jieshao">{{msg.descs}}</view>
+    <view class="bottom" wx:if="{{type==3}}">
+      <view class="labels">
+        <view wx:for="{{msg.labelList}}" wx:key="i">{{item}}</view>
+      </view>
+      <view class="price">￥{{msg.price / 100}}</view>
+    </view>
+  </view>
+</view>

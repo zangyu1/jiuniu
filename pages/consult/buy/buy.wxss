@@ -1,0 +1,224 @@
+.container{
+  padding-bottom: 200rpx;
+}
+
+.part{
+  padding: 0 25rpx;
+  padding-top: 35rpx;
+}
+
+.part.liu{
+  padding-top: 10rpx;
+}
+
+.title{
+  font-size: 34rpx;
+  color: #333333;
+  font-weight: bold;
+  margin-bottom: 35rpx;
+}
+
+.card{
+  background-color: #ffffff;
+  border-radius: 9rpx;
+  padding: 50rpx 25rpx;
+  position: relative;
+}
+
+.liu .card{
+  height: 190rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50rpx;
+}
+
+.oneliu{
+  text-align: center;
+  font-size: 24rpx;
+  color: #717888;
+  position: relative;
+  z-index: 9;
+}
+
+.oneliu image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.line{
+  position: absolute;
+  width: 500rpx;
+  height: 1rpx;
+  border-top: 1rpx dashed #79A6F8;
+  top: 70rpx;
+  left: 60rpx;
+}
+
+.msg .card{
+  padding-bottom: 0;
+}
+
+.xuzhi{
+  width: 152rpx;
+  height: 66rpx;
+  position: absolute;
+  right: 0;
+  top: -22rpx;
+}
+
+.msgone{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+  font-size: 27rpx;
+  color: #333333;
+}
+
+.picker{
+  display: flex;
+  align-items: center;
+}
+
+.picker image{
+  width: 18rpx;
+  height: 10rpx;
+  margin-left: 16rpx;
+  margin-top: 4rpx;
+}
+
+.nums{
+  display: flex;
+  align-items: center;
+}
+
+.nums image{
+  width: 43rpx;
+  height: 43rpx;
+}
+
+.nums view{
+  width: 50rpx;
+  text-align: center;
+  font-size: 25rpx;
+  font-weight: bold;
+}
+
+.header{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+}
+
+.tips{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 27rpx;
+  font-weight: bold;
+  color: #333333;
+  height: 100rpx;
+  border-top: 1rpx solid #EDEDED;
+}
+
+.tips > view:last-child{
+  color: #FFAB2B;
+}
+
+.one{
+  margin-bottom: 50rpx;
+}
+
+.one,.form,.radio{
+  display: flex;
+  align-items: center;
+}
+
+.left{
+  width: 140rpx;
+  font-size: 27rpx;
+  color: #333333;
+}
+
+.radio{
+  margin-right: 40rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.choice{
+  width: 29rpx;
+  height: 29rpx;
+  margin-right: 13rpx;
+}
+
+input{
+  width: 400rpx;
+  font-size: 27rpx;
+}
+
+.place{
+  color: #CCCCCC;
+}
+
+.copy{
+  width: 60rpx;
+  height: 38rpx;
+}
+
+.xieyi{
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 30rpx;
+  padding: 0 30rpx;
+}
+
+.xieyi text{
+  color: #002247;
+}
+
+.buy{
+  position: fixed;
+  width: 100%;
+  height: 154rpx;
+  padding: 0 30rpx;
+  padding-bottom: 25rpx;
+  display: flex;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  justify-content: space-between;
+  z-index: 9;
+}
+
+.price{
+  font-size: 27rpx;
+  color: #FFAB2B;
+  font-weight: bold;
+}
+
+.btn{
+  width: 270rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  font-size: 25rpx;
+  color: #FFFFFF;
+  background-color: #002247;
+  border-radius: 36rpx;
+  position: relative;
+}
+
+.btn button{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+}

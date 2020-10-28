@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <navigationBar title="问答详情"></navigationBar>
+  <view class="detail">
+    <wenda msg="{{msg}}" type="5"></wenda>
+  </view>
+
+  <view class="foot">
+    <input value="{{selTitle}}" confirm-type="done" bindconfirm="sendPing" placeholder="发表您对问题的看法吧~"></input>
+    <view class="left3">
+      <image bindtap="dianzan" data-i="2" wx:if="{{msg.likeType}}" src="/img/public/zan2.png"></image>
+      <image bindtap="dianzan" data-i="1" wx:else src="/img/public/zan.png"></image><view>{{msg.likeNum}}</view>
+      <image bindtap="collect" data-i="2" wx:if="{{msg.collectType}}" src="/img/public/xin2.png"></image>
+      <image bindtap="collect" data-i="1" wx:else src="/img/public/xin1.png"></image><view>{{msg.collectNum}}</view>
+      <view class="share">
+        <image src="/img/public/share.png"></image><view>分享</view>
+        <button open-type="share"></button>
+      </view>
+      
+    </view>
+  </view>
+</view>

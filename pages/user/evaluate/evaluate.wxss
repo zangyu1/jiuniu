@@ -1,0 +1,110 @@
+.container{
+  padding: 27rpx;
+}
+
+.main{
+  background-color: #fff;
+  padding: 35rpx 25rpx;
+  border-radius: 11rpx;
+}
+
+.tea{
+  display: flex;
+  align-items: center;
+}
+
+.tea image{
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 54rpx;
+  margin-right: 30rpx;
+}
+
+.name{
+  font-size: 27rpx;
+  color: #333333;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+}
+
+.zixun{
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.dafen{
+  display: flex;
+  align-items: center;
+  font-size: 22rpx;
+  margin-top: 45rpx;
+}
+
+.title{
+  margin-right: 15rpx;
+}
+
+.xings{
+  display: flex;
+}
+
+.xings image{
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 9rpx;
+}
+
+.xings image:last-child{
+  margin-right: 30rpx;
+}
+
+textarea{
+  width: 100%;
+  background-color: #FAFAFA;
+  font-size: 24rpx;
+  padding: 35rpx;
+  height: 400rpx;
+  margin-top: 35rpx;
+}
+
+.labels{
+  padding: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #FAFAFA;
+}
+
+.labels view{
+  width: 120rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #8A9399;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-right: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.labels view:nth-child(4n){
+  margin-right: 0;
+}
+
+.labels view.true{
+  background-color: #FFAB2B;
+  color: #FFFFFF;
+}
+
+.tijiao{
+  width: 600rpx;
+  height: 86rpx;
+  line-height: 86rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  color: #FFFFFF;
+  font-size: 31rpx;
+  position: fixed;
+  left: 75rpx;
+  bottom: 60rpx;
+  background-color: #002248;
+}

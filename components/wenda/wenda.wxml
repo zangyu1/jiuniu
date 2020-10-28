@@ -1,0 +1,69 @@
+<view class="wenda">
+  <view class="huifu" wx:if="{{type==2}}">
+    <view class="huitop">
+      <view>{{msg.createdDate}}</view>
+      <view bindtap="del" bindtap="delPind">删除</view>
+    </view>
+    <view class="content">{{msg.content}}</view>
+  </view>
+  <view class="top">
+    <view class="title oneline" bindtap="goDetail">
+      <image src="/img/user/wenhao.png"></image>{{msg.title}}
+    </view>
+    <view bindtap="feel" class="tong">
+      <view><text class="{{msg.feelType}}">{{msg.feelNum}}</text>人</view><view>有同感</view>
+    </view>
+  </view>
+
+  <view bindtap="goDetail" class="huida" wx:if="{{type==4}}">共{{msg.answerNum}}个精彩回答<image src="/img/public/go.png"></image></view>
+
+  <view wx:if="{{type==6}}" class="huidale">{{msg.updatedDate}}  他回答了问题</view>
+
+  <view class="teacher {{type==6}}" wx:if="{{((type==4 || type==6)&&index==0)||type==5}}" wx:for="{{msg.answerListVo}}" wx:key="i">
+    <view class="tea" wx:if="{{type==4||type==5}}">
+      <image src="{{imgUrl+item.headUrl}}"></image><view class="name">{{item.teacherName}}</view><view>{{item.descs}}</view>
+    </view>
+
+    <view class="content2 {{item.showAll?'':'no'}}">
+      <rich-text nodes="{{item.content}}"></rich-text>
+    </view>   
+    <view class="btn" bindtap="showAll" data-i="{{index}}">{{item.showAll?'收起':'展开全文'}}</view>    
+    <view class="time">{{item.createdDate}}</view>
+  </view>
+            
+
+  <view class="bottom" wx:if="{{type!=5&&type!=6}}">
+    <view wx:if="{{type==1}}" bindtap="del">取消关注</view>
+    <view wx:if="{{type==2}}"></view>
+    <view wx:if="{{type==3||type==4}}" class="left3">
+      <view class="share" bindtap="showHui">
+        <image wx:if="{{type==4}}" src="/img/public/huifu.png"></image>
+        <view wx:if="{{type==4}}">{{msg.answerNum}}</view>
+      </view>
+      <image bindtap="dianzan" data-i="2" wx:if="{{msg.likeType}}" src="/img/public/zan2.png"></image>
+      <image bindtap="dianzan" data-i="1" wx:else src="/img/public/zan.png"></image><view>{{msg.likeNum}}</view>
+      <image bindtap="collect" data-i="2" wx:if="{{msg.collectType}}" src="/img/public/xin2.png"></image>
+      <image bindtap="collect" data-i="1" wx:else src="/img/public/xin1.png"></image><view>{{msg.collectNum}}</view>
+      <view class="share" wx:if="{{type==3}}">
+        <image src="/img/public/share.png"></image>
+        <view>分享</view>
+        <button data-i="{{msg}}" open-type="share"></button>
+      </view>
+    </view>
+    <view wx:if="{{type==4}}" class="left3 share">
+      <image src="/img/public/share.png"></image><view>分享</view>
+      <button data-i="{{msg}}" open-type="share"></button>
+    </view>
+    <view bindtap="goDetail" wx:else class="jingcai">精彩回答<image src="/img/user/right.png"></image></view>
+  </view>
+
+  <view wx:if="{{(type==4&&msg.showHuifu)||type==5}}" class="huifulist">
+    <view class="list" wx:for="{{msg.commentListVo}}" wx:key="i">
+      <image src="{{item.headUrl}}"></image>
+      <view class="text">{{item.nickName}}：{{item.content}}</view>
+      <view bindtap="delPind" data-item="{{item}}" data-i="{{index}}" class="del" wx:if="{{item.userId==userId}}">删除</view>
+    </view>
+    <input value="{{selTitle}}" confirm-type="done" bindconfirm="sendPing" adjust-position="{{false}}" class="kanfa" wx:if="{{type==4}}" placeholder="发表您对问题的看法吧~"></input>
+  </view>
+  <view wx:if="{{type==4||type==5}}" class="kongbai"></view>
+</view>

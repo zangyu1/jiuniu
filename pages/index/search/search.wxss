@@ -1,0 +1,133 @@
+/* 搜索 */
+.container{
+  height: 100%;
+}
+
+.search{
+  padding: 25rpx 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searchLeft{
+  width: 590rpx;
+  padding: 0 25rpx 0 45rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  background-color: #FAFAFA;
+  border-radius: 40rpx;
+  color: #666666;
+  font-size: 25rpx;
+  border: 1rpx solid #E7E8E8;
+}
+
+.searchLeft input{
+  width: 100%;
+  height: 100%;
+  padding-left: 25rpx;
+}
+
+.kefu > view{
+  position: relative;
+}
+
+.kefu button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.kefu image{
+  width: 34rpx;
+  height: 33rpx;
+}
+
+.kefu view{
+  color: #666666;
+  font-size: 18rpx;
+}
+
+.history{
+  padding: 0 30rpx;
+  margin-top: 35rpx;
+}
+
+.history .top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.history .top view{
+  padding-left: 15rpx;
+  color: #666666;
+  border-left: 4rpx solid #666666;
+}
+
+.history .top image{
+  width: 31rpx;
+  height: 29rpx;
+}
+
+.hLists{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 35rpx;
+}
+
+.hLists view{
+  width: 143rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  text-align: center;
+  font-size: 25rpx;
+  color: #999999;
+  padding: 0 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: #ffffff;
+  margin-right: 20rpx;
+}
+
+.lists{
+  padding-top: 35rpx;
+  padding: 35rpx 30rpx;
+  height: 100%;
+}
+
+.list{
+  margin-bottom: 20rpx;
+}
+
+.nodata{
+  padding-top: 300rpx;
+  text-align: center;
+  font-size: 27rpx;
+  color: #818692;
+  font-weight: bold;
+}
+
+.nodata image{
+  width: 276rpx;
+  height: 156rpx;
+  margin: 0 auto;
+  margin-bottom: 60rpx;
+}
+
+.nodata .btn{
+  width: 163rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  border-radius: 29rpx;
+  border: 1rpx solid #002247;
+  color: #002247;
+  font-size: 25rpx;
+  margin: 0 auto;
+  margin-top: 35rpx;
+}

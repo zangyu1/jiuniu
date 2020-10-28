@@ -1,0 +1,136 @@
+.top{
+  position: relative;
+}
+
+.topbg{
+  width: 750rpx;
+  height: 584rpx;
+}
+
+.kefu{
+  position: absolute;
+  top: 180rpx;
+  right: 40rpx;
+}
+
+.kefu > view{
+  position: relative;
+}
+
+.kefu button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.kefu image{
+  width: 34rpx;
+  height: 33rpx;
+}
+
+.kefu view{
+  color: #ffffff;
+  font-size: 18rpx;
+}
+
+.user{
+  position: absolute;
+  bottom: 130rpx;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.usermain{
+  position: relative;
+}
+
+.usermain button{
+  position: absolute;
+  width: 116rpx;
+  height: 100%;
+  top: 0;
+  left: calc(50% - 58rpx);
+  opacity: 0;
+}
+
+.usermain > image{
+  width: 116rpx;
+  height: 116rpx;
+  margin-bottom: 30rpx;
+  border-radius: 58rpx;
+}
+
+.usermain > view{
+  font-size: 32rpx;
+  color: #ffffff;
+}
+
+.usermain > view > image{
+  width: 10rpx;
+  height: 18rpx;
+  margin-left: 10rpx;
+}
+
+.list{
+  display: flex;
+  padding: 0 34rpx;
+  align-items: center;
+  justify-content: space-between;
+  height: 116rpx;
+  border-bottom: 1rpx solid #E9ECEE;
+  color: #333333;
+  font-size: 26rpx;
+  background-color: #ffffff;
+}
+
+.list > image{
+  width: 6rpx;
+  height: 20rpx;
+}
+
+.left{
+  display: flex;
+  align-items: center;
+}
+
+.left > image{
+  width: 56rpx;
+  height: 56rpx;
+  margin-right: 18rpx;
+}
+
+.phone{
+  position: relative;
+}
+
+.phone button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.zixun{
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding: 0 35rpx;
+  margin-bottom: 20rpx;
+}
+
+.title{
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 34rpx;
+  color: #333333;
+  font-weight: bold;
+}
+
+.one{
+  border-top: 2rpx solid #E8EBED;
+}

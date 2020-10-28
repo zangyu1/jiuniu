@@ -1,0 +1,26 @@
+.container{
+  height: 100%;
+}
+
+.main{
+  padding: 25rpx;
+  position: relative;
+}
+
+.teacher{
+  margin-bottom: 25rpx;
+}
+
+.noData{
+  text-align: center;
+  font-size: 27rpx;
+  color: #818692;
+  font-weight: bold;
+  padding-top: 270rpx;
+}
+
+.noData image{
+  width: 276rpx;
+  height: 156rpx;
+  margin-bottom: 60rpx;
+}

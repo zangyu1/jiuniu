@@ -1,0 +1,91 @@
+<!--index.wxml-->
+<view class="container">
+  <navigationBar wx:if="{{scrollTop==0}}" title="九牛问津" type="2" has_back="{{false}}" opacity="0"></navigationBar>
+
+  <view class="top">
+    <!-- banner轮播图 -->
+    <swiper class="banner" indicator-dots="true" autoplay="true" indicator-color="rgba(255,255,255,0.3)" indicator-active-color="#ffffff" circular="true">
+      <swiper-item wx:for="{{bannerArr}}" wx:key="i">
+        <image class="bannerImg" src='{{imgUrl+item.url}}'></image>
+      </swiper-item>
+    </swiper>
+    <view class="kefu">
+      <view>
+        <image src="/img/user/kefu.png"></image>
+        <view>客服</view>
+        <button open-type="contact" send-message-title="首页" show-message-card="true"></button>
+      </view>
+    </view>
+  </view>
+  <!-- 搜索 -->
+  <view class="search" bindtap="goToSearch">
+    <icon class="icon-small" type="search" size="14" color="#666666"></icon><view>输入关键词查找相关老师</view>
+  </view>
+
+  <!-- 我们是谁 -->
+  <view class="mine">
+    <view class="title">我们是谁</view>
+    <swiper class="whowe" previous-margin="53rpx" next-margin="53rpx" autoplay="true" circular="true">
+      <swiper-item class="mineJie" wx:for="{{mineArr}}" data-item="{{item}}" wx:key="i">
+        <image src='{{item.imageUrl}}'></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 为什么选我们 -->
+  <view class="baoming">
+    <view class="title">为什么选我们</view>
+    <image bindtap="goWhy" mode="widthFix" src='/img/index/why.png'></image>
+  </view>
+
+  <!-- 我们的服务 -->
+  <view class="fuwu">
+    <view class="title">
+      <view>我们的服务</view>
+      <view class="more" bindtap="goFuwu">更多 <image src="/img/public/go.png"></image></view>
+    </view>
+    <scroll-view scroll-x="true">
+      <view class="lists">
+        <view class="one" wx:for="{{fuwuArr}}" data-item="{{item}}" wx:key="i">
+          <image mode="widthFix" src='{{imgUrl+item.imgUrl}}'></image>
+          <view class="biao">{{item.title}}</view>
+          <view class="text">{{item.content}}</view>
+        </view>
+      </view>
+    </scroll-view>
+    
+  </view>
+
+  <!-- 热门导师 -->
+  <view class="hot">
+    <view class="title">热门导师</view>
+    <swiper next-margin="190rpx" class="hotAll">
+      <swiper-item class="hotOne" wx:for="{{hotLun}}" wx:key="i">
+        <image class="bg" src="{{imgUrl+item.bgUrl}}"></image>
+        <view class="content">
+          <view class="text1">{{item.title}}</view>
+          <view class="tea" bindtap="goTea" wx:for="{{item.teacherVoList}}" wx:for-item="item2" data-i="{{item2}}" wx:key="i">
+            <view>
+              <image class="header" src="{{imgUrl+item2.headUrl}}"></image>
+              <view>
+                <view class="name">{{item2.teacherName}}</view><view class="nums">{{item2.showAskCount}}人咨询</view>
+              </view>
+            </view>
+            <image class="right" src="/img/public/right2.png"></image>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 热门问答 -->
+  <view class="wenda">
+    <view class="title">热门问答</view>
+    <view class="wendaOne" wx:for="{{wendaList}}" wx:key="i">
+      <wenda bind:share="share" msg="{{item}}" type="3"></wenda>
+    </view>
+  </view>
+
+  <!-- 新手指南 -->
+  <image bindtap="goNew" class="xinshou" src="/img/index/zhinan.png"></image>
+</view>

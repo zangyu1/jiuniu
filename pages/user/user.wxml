@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<view class="container">
+  <navigationBar wx:if="{{scrollTop==0}}" title="我的" opacity="0" type="2" has_back="{{false}}"></navigationBar>
+  <view class="top">
+    <image class="topbg" src="/img/user/top.jpg"></image>
+    <view class="kefu">
+      <view>
+        <image src="/img/user/kefu.png"></image>
+        <view>客服</view>
+        <button open-type="contact" send-message-title="个人中心" show-message-card="true"></button>
+      </view>
+    </view>
+    
+    
+    <view wx:if="{{userInfo.headUrl}}" class="user">
+      <view class="usermain">
+        <image src="{{userInfo.headUrl}}"></image>
+        <view>{{userInfo.nickName}}</view>
+      </view>
+    </view>
+
+    <view wx:else class="user">
+      <view class="usermain">
+        <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
+        <image src="/img/user/user.png"></image>
+        <view>登录<image class="icon" src="/img/public/right.png"></image></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="lists">
+    <!-- <view class="list phone" wx:if="{{userInfo&&!userInfo.telNo}}">
+      <view class="left">
+        <image src="/img/user/phone.png"></image>
+        <view>授权手机登录</view>
+      </view>
+      <image src="/img/public/go.png"></image>
+      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
+    </view> -->
+    <view bindtap="goToPage" data-i="{{index}}" class="list" wx:for="{{lists}}" wx:key="i">
+      <view class="left">
+        <image src="{{item.img}}"></image>
+        <view>{{item.name}}</view>
+      </view>
+      <image src="/img/public/go.png"></image>
+    </view>
+  </view>
+
+  <view class="zixun" wx:if="{{zixunList.length>0}}">
+    <view class="title">待咨询</view>
+    <view class="one" wx:for="{{zixunList}}" wx:key="i"> 
+      <zixun msg="{{item}}"></zixun>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+<view class="evaluate">
+  <view wx:if="{{type==1}}" class="time">
+    <view>{{msg.createdDate}}</view><view bindtap="del">删除</view>
+  </view>
+
+  <view class="dafen" wx:if="{{type==1}}">
+    <view class="title">咨询品质:</view>
+    <view class="xings">
+      <image wx:for="{{msg.qualityScore}}" wx:key="i" src="/img/public/xing2.png"></image>
+      <image wx:for="{{5 - msg.qualityScore}}" wx:key="i" src="/img/public/xing1.png"></image>
+    </view>
+    <view class="title">沟通态度:</view>
+    <view class="xings">
+      <image wx:for="{{msg.attitudeScore}}" wx:key="i" src="/img/public/xing2.png"></image>
+      <image wx:for="{{5 - msg.attitudeScore}}" wx:key="i" src="/img/public/xing1.png"></image>
+    </view>
+  </view>
+
+  <view class="dafen2" wx:if="{{type==2}}">
+    <image src="{{imgUrl+teaMsg.headUrl}}"></image>
+    <view class="fenright">
+      <view class="fenname">{{teaMsg.teacherName}}</view>
+      <view class="dafen">
+        <view class="title">咨询品质:</view>
+        <view class="xings">
+          <image wx:for="{{msg.qualityScore}}" wx:key="i" src="/img/public/xing2.png"></image>
+          <image wx:for="{{5 - msg.qualityScore}}" wx:key="i" src="/img/public/xing1.png"></image>
+        </view>
+        <view class="title">沟通态度:</view>
+        <view class="xings">
+          <image wx:for="{{msg.attitudeScore}}" wx:key="i" src="/img/public/xing2.png"></image>
+          <image wx:for="{{5 - msg.attitudeScore}}" wx:key="i" src="/img/public/xing1.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="content">{{msg.content}}</view>
+
+  <view class="labels" wx:if="{{type==1}}">
+    <view wx:for="{{msg.labels}}" wx:key="i">{{item}}</view>
+  </view>
+
+  <view class="tea" wx:if="{{type==1}}">
+    <view>
+      <image class="header" src="{{imgUrl+teaMsg.headUrl}}"></image>
+      <view class="name">{{teaMsg.teacherName}}</view><view class="nums">{{teaMsg.showAskCount}}人咨询</view>
+    </view>
+    <image class="right" src="/img/public/right2.png"></image>
+  </view>
+
+  <view class="zan">
+    <view wx:if="{{type==2}}">{{msg.createdDate}}</view>
+    <view wx:else></view>
+    <view>
+      <image wx:if="msg.zan" src="/img/public/zan2.png"></image>
+      <image wx:else src="/img/public/zan1.png"></image>
+      <view>{{msg.likeCount}}</view>
+    </view>
+  </view>
+</view>

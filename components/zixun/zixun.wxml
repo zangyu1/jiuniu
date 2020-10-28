@@ -1,0 +1,22 @@
+<view class="zixun">
+  <view class="text">下单时间：{{msg.createdDate}}</view>
+  <view class="text">咨询内容：{{msg.methodName}}×{{msg.askNum}}</view>
+  <view class="text">订单金额：￥{{msg.showPrice}}</view>
+  <view class="tea" bindtap="goTea">
+    <view>
+      <image class="header" src="{{imgUrl+msg.headUrl}}"></image>
+      <view class="name">{{msg.teacherName}}</view><view class="nums">{{msg.showAskCount}}人咨询</view>
+    </view>
+    <image class="right" src="/img/public/right2.png"></image>
+  </view>
+  <view class="btns">
+    <view class="kefu" wx:if="{{msg.status==1}}">
+      联系客服
+      <button open-type="contact" send-message-title="我的咨询" show-message-card="true"></button>
+    </view>
+    <view wx:if="{{msg.status==0}}" bindtap="del">取消订单</view>
+    <view wx:if="{{msg.status==0}}" bindtap="pay">立即付款</view>
+    <view wx:if="{{msg.status==2}}" bindtap="del">删除</view>
+    <view wx:if="{{msg.status==2}}" bindtap="ping">去评价</view>
+  </view>
+</view>

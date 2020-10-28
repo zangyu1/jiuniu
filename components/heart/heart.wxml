@@ -1,0 +1,20 @@
+<view class="heart">
+  <image class="yin" src="/img/public/yin1.png"></image>
+  <view class="content">{{msg.content}}</view>
+  <view class="bot">
+    <view>-{{msg.nickName}}</view><image class="yin" src="/img/public/yin2.png"></image>
+  </view>
+  <view class="tea">
+    <view>
+      <image class="header" src="{{imgUrl+msg.teacherHeadUrl}}"></image>
+      <view class="name">{{msg.teacherNickName}}</view><view class="nums">{{msg.showAskCount}}人咨询</view>
+    </view>
+    <image class="right" src="/img/public/right2.png"></image>
+  </view>
+
+  <view class="zan">
+    <view>{{msg.likeCount}}人点赞</view>
+    <image bindtap="dianzan" data-i="2" wx:if="{{msg.likeType}}" src="/img/public/zan2.png"></image>
+    <image bindtap="dianzan" data-i="1" wx:else src="/img/public/zan.png"></image>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container">
+  <navigationBar title="我的咨询"></navigationBar>
+
+  <view class="title">
+    <view class="{{tindex==1}}" bindtap="choice" data-i="1">待咨询</view>
+    <view class="{{tindex==0}}" bindtap="choice" data-i="0">待付款</view>
+    <view class="{{tindex==2}}" bindtap="choice" data-i="2">已完成</view>
+  </view>
+
+  <scroll-view style="height: calc(100% - {{statusH+titleH}}px - 80rpx);" scroll-y="true" bindscrolltolower="selData" wx:if="{{lists.length>0}}" class="main">
+    <view class="one" wx:for="{{lists}}"> 
+      <zixun bind:del="selData" msg="{{item}}"></zixun>
+    </view>
+  </scroll-view>
+
+  <view class="noData" wx:else>
+    <image src="/img/public/noData.png"></image>
+    <view>暂无咨询</view>
+  </view>
+</view>

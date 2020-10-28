@@ -1,0 +1,95 @@
+<view class="container">
+  <navigationBar title="购买服务"></navigationBar>
+
+  <view class="part liu">
+    <view class="title">服务流程</view>
+    <view class="card">
+      <view class="line"></view>
+      <view class="oneliu">
+        <image src="/img/consult/liu1.png"></image>
+        <view>沟通确认</view>
+      </view>
+      <view class="oneliu">
+        <image src="/img/consult/liu2.png"></image>
+        <view>成功付款</view>
+      </view>
+      <view class="oneliu">
+        <image src="/img/consult/liu3.png"></image>
+        <view>开始咨询</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="part msg">
+    <view class="title">服务信息</view>
+    <view class="card">
+      <image class="xuzhi" src="/img/consult/yuyue.png"></image>
+      <view class="msgone">
+        <view>预约老师</view><image class="header" src="{{imgUrl+headUrl}}"></image>
+      </view>
+      <view class="msgone">
+        <view>咨询方式</view>
+        <picker wx:if="{{typeList.length>0}}" bindchange="bindPickerChange" value="{{choice.index}}" range="{{typeArr}}">
+          <view class="picker">
+            {{choice.methodName}}<image class="header" src="/img/consult/jian1.png"></image>
+          </view>
+        </picker>
+      </view>
+      <view class="msgone">
+        <view>咨询次数</view>
+        <view class="nums">
+          <image bindtap="reduce" wx:if="{{nums>1}}" src="/img/consult/reduce.png"></image><image wx:else src="/img/consult/reduce2.png"></image>
+          <view>{{nums}}</view>
+          <image bindtap="add" wx:if="{{nums<1000}}" src="/img/consult/add.png"></image><image wx:else src="/img/consult/add2.png"></image>
+        </view>
+      </view>
+      <view class="tips">
+        <view>{{choice.methodTime}}分钟{{choice.methodName}}×{{nums}}</view><view>￥{{choice.showPrice}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="part jiben">
+    <view class="title">基本信息</view>
+    <view class="card">
+      <view class="one sex">
+        <view class="left">性别</view>
+        <view class="form">
+          <view class="radio" bindtap="choiceSex" data-i="M">
+            <image wx:if="{{sex=='M'}}" class="choice" src="/img/consult/choice2.png"></image>
+            <image wx:else class="choice" src="/img/consult/choice.png"></image>
+            <view>男士</view>
+          </view>
+          <view class="radio" bindtap="choiceSex" data-i="F">
+            <image wx:if="{{sex=='F'}}" class="choice" src="/img/consult/choice2.png"></image>
+            <image wx:else class="choice" src="/img/consult/choice.png"></image>
+            <view>女士</view>
+          </view>
+        </view>
+      </view>
+      <view class="one phone">
+        <view class="left">手机号</view>
+        <input bindinput="getPhone" placeholder-class="place" placeholder="请输入手机号" />
+        <image bindtap="copy" class="copy" src="/img/consult/copy.png"></image>
+      </view>
+      <view class="one wx">
+        <view class="left">微信号</view>
+        <input bindinput="getWx" placeholder-class="place" placeholder="请输入或复制微信号" />
+      </view>
+    </view>
+  </view>
+
+  <view class="xieyi">
+    <image bindtap="read" wx:if="{{readXieyi}}" class="choice" src="/img/consult/choice2.png"></image>
+    <image bindtap="read" wx:else class="choice" src="/img/consult/choice.png"></image>
+    <view>我已查看并同意<text bindtap="showFuwu">《用户服务协议》</text>与<text bindtap="showYin">《隐私协议》</text></view>
+  </view>
+
+  <view class="buy">
+    <view class="price">共计：￥{{showTotal}}</view>
+    <view bindtap="pay" class="btn">
+      去支付
+      <button wx:if="{{!userInfo}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
+    </view>
+  </view>
+</view>

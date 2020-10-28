@@ -1,0 +1,33 @@
+<view class="shipin">
+  <video title="{{msg.title}}" poster="{{imgUrl+msg.coverUrl}}" src="{{imgUrl+msg.videoUrl}}"></video>  
+
+  <view class="title">{{msg.title}}</view>
+
+  <view class="content">{{msg.content}}</view>
+
+  <view class="bottom">
+    <view class="left3">
+      <view class="share" bindtap="showHui">
+        <image src="/img/public/huifu.png"></image>
+        <view>{{msg.videoCommentList.length}}</view>
+      </view>
+      
+      <image bindtap="dianzan" data-i="2" wx:if="{{msg.likeType}}" src="/img/public/zan2.png"></image>
+      <image bindtap="dianzan" data-i="1" wx:else src="/img/public/zan.png"></image><view>{{msg.likeNum}}</view>
+    </view>
+    <view class="left3 share">
+      <image src="/img/public/share.png"></image><view>分享</view>
+      <button data-i="{{msg}}" open-type="share"></button>
+    </view>
+  </view>
+
+  <view wx:if="{{msg.showHuifu}}" class="huifulist">
+    <view class="list" wx:for="{{msg.videoCommentList}}" wx:key="i">
+      <image src="{{item.headUrl}}"></image>
+      <view class="text">{{item.nickName}}：{{item.content}}</view>
+      <view bindtap="delPind" data-item="{{item}}" data-i="{{index}}" class="del" wx:if="{{item.userId==userId}}">删除</view>
+    </view>
+    <input value="{{selTitle}}" confirm-type="done" bindconfirm="sendPing" adjust-position="{{false}}" class="kanfa" placeholder="发表您对视频的看法吧~"></input>
+  </view>
+  <view class="kongbai"></view>
+</view>

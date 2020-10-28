@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <navigationBar title="我的足迹"></navigationBar>
+  <scroll-view style="height: calc(100% - {{statusH+titleH}}px);" scroll-y="true" bindscrolltolower="selData" wx:if="{{lists.length>0}}" class="main">
+    <view wx:for="{{lists}}" wx:key="i">
+      <view class="text1"><view>{{item.time}}</view><view class="del" bindtap="del" data-i="{{item}}">删除记录</view></view>
+      <view class="teacher" wx:for="{{item.list}}" wx:for-item="item2" wx:for-index="index2" wx:key="i">  
+        <teacher type="2" msg="{{item2}}"></teacher>
+      </view>
+    </view>
+  </scroll-view>
+  
+
+  <view class="noData" wx:else>
+    <image src="/img/public/noData.png"></image>
+    <view>暂无足迹</view>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+/**index.wxss**/
+.container{
+  height: 100%;
+}
+
+.title{
+  display: flex;
+  color: #999999;  
+  font-size: 31rpx;
+  padding: 0 25rpx;
+  height: 80rpx;
+  align-items: center;
+}
+
+.title view{
+  margin-right: 45rpx;
+}
+
+.title .true{
+  color: #333333;
+  font-weight: bold;
+}
+
+.main{
+  padding: 0 25rpx;
+}
+
+.main .one{
+  margin-bottom: 25rpx;
+}
+
+.main .one:last-child{
+  margin-bottom: 0;
+}
+
+.noData{
+  text-align: center;
+  font-size: 27rpx;
+  color: #818692;
+  font-weight: bold;
+  padding-top: 400rpx;
+}
+
+.noData image{
+  width: 276rpx;
+  height: 156rpx;
+  margin-bottom: 60rpx;
+}

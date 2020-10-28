@@ -1,0 +1,15 @@
+<view class="container">
+  <navigationBar title="全部评价"></navigationBar>
+
+  <!-- 列表 -->
+  <scroll-view style="height: calc(100% - {{statusH+titleH}}px);" scroll-y="true" bindscrolltolower="selData" wx:if="{{pingLists.length>0}}" class="main">
+    <view wx:for="{{pingLists}}" class="teacher" wx:key="i">  
+      <evaluate type="2" msg="{{item}}" teaMsg="{{msg}}"></evaluate>
+    </view>
+  </scroll-view>
+
+  <view class="noData" wx:else>
+    <image src="/img/public/noData.png"></image>
+    <view>暂无评价</view>
+  </view>
+</view>

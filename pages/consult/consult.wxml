@@ -1,0 +1,86 @@
+<!--index.wxml-->
+<view class="container">
+  <navigationBar has_back="{{false}}" title="咨询"></navigationBar>
+
+  <!-- 搜索 -->
+  <view class="search">
+    <view class="searchLeft" bindtap="goToSearch">
+      <icon class="icon-small" type="search" size="14" color="#666666"></icon><view>填报志愿</view>
+    </view>
+    <view class="kefu">
+      <view>
+        <image src="/img/public/kefu.png"></image>
+        <view>客服</view>
+        <button open-type="contact" send-message-title="咨询" show-message-card="true"></button>
+      </view>
+    </view>
+  </view>
+  <view class="top">
+    <!-- banner轮播图 -->
+    <swiper class="banner" indicator-dots="true" autoplay="true" indicator-color="rgba(255,255,255,0.3)" indicator-active-color="#ffffff" circular="true">
+      <swiper-item wx:for="{{bannerArr}}" bindtap="goDetail" data-item="{{item}}" wx:key="i">
+        <image class="bannerImg" src='{{item.imageUrl}}'></image>
+      </swiper-item>
+    </swiper>
+    
+  </view>
+  
+
+  <!-- 分类列表 -->
+  <view class="fenlei">
+    <view bindtap="goList" data-i="{{item.id}}" class="fenOne" wx:for="{{fenleiList}}" wx:key="i">
+      <image src="{{(item.id!=-1)?(imgUrl+item.checkedUrl):'/img/consult/fenlei.png'}}"></image>
+      <view>{{item.iconName}}</view>
+    </view>
+  </view>
+
+  <!-- 为你推荐 -->
+  <view class="tui">
+    <view class="title">为你推荐</view>
+    <scroll-view class="titleList" scroll-x="true" scroll-with-animation="true" scroll-left="{{(tuiIndex - 1) * 140}}rpx">
+      <view class="titleAll">
+        <view wx:if="{{index<fenleiList.length-1}}" bindtap="choiceTitle" class="titleOne {{tuiIndex==index}}" wx:for="{{fenleiList}}" data-item="{{item}}" data-index="{{index}}" wx:key="i">
+          {{item.iconName}}
+        </view>
+      </view>
+    </scroll-view>
+    <view class="tuiAll" current="{{tuiIndex}}" bindchange="changeTitle">
+      <view class="tuiOne" wx:for="{{teaList}}" data-item="{{item}}" wx:key="i">
+        <view class="teacher">
+          <teacher bindtap="goTea" data-item="{{item}}" type="3" msg="{{item}}"></teacher>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 本周热门 -->
+  <view class="hot">
+    <view class="title">热门导师</view>
+    <swiper next-margin="190rpx" class="hotAll">
+      <swiper-item class="hotOne" wx:for="{{hotLun}}" wx:key="i">
+        <image class="bg" src="{{imgUrl+item.bgUrl}}"></image>
+        <view class="content">
+          <view class="text1">{{item.title}}</view>
+          <view class="tea" bindtap="goTea" wx:for="{{item.teacherVoList}}" wx:for-item="item2" data-item="{{item2}}" wx:key="i">
+            <view>
+              <image class="header" src="{{imgUrl+item2.headUrl}}"></image>
+              <view>
+                <view class="name">{{item2.teacherName}}</view><view class="nums">{{item2.showAskCount}}人咨询</view>
+              </view>
+            </view>
+            <image class="right" src="/img/public/right2.png"></image>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 用户心声 -->
+  <view class="wenda">
+    <view class="title">用户心声</view>
+    <view class="wendaOne" wx:for="{{xinList}}" wx:key="i">
+      <heart msg="{{item}}"></heart>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <navigationBar title="全部服务"></navigationBar>
+  <view class="lists">
+    <view class="one" wx:for="{{fuwuArr}}" data-item="{{item}}" wx:key="">
+      <image mode="widthFix" src='{{imgUrl+item.imgUrl}}'></image>
+      <view class="biao">{{item.title}}</view>
+      <view class="text">{{item.content}}</view>
+    </view>
+  </view>
+</view>

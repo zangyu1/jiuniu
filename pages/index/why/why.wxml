@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <navigationBar title="为什么选我们"></navigationBar>
+  <image mode="widthFix" src="https://www.jiuniuwenjin.com:8080/pic/20200926/202009262123063478.png"></image>
+  <image mode="widthFix" src="https://www.jiuniuwenjin.com:8080/pic/20200926/202009262123298176.png"></image>
+  <image mode="widthFix" src="https://www.jiuniuwenjin.com:8080/pic/20200926/202009262124218167.png"></image>
+</view>

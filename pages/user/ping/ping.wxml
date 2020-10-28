@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <navigationBar title="我的评价"></navigationBar>
+  <view class="title">
+    <view class="{{tindex==1}}" bindtap="choice" data-i="1">老师</view>
+    <view class="{{tindex==2}}" bindtap="choice" data-i="2">问答</view>
+  </view>
+
+  <scroll-view style="height: calc(100% - {{statusH+titleH}}px - 80rpx);" scroll-y="true" bindscrolltolower="selData" wx:if="{{lists.length>0}}" class="main">
+    <view wx:if="{{tindex==1}}" class="one" wx:for="{{lists}}"> 
+      <evaluate bind:del="selData" msg="{{item}}"></evaluate>
+    </view>
+    <view wx:if="{{tindex==2}}" class="one" wx:for="{{lists}}"> 
+      <wenda bind:del="selData" msg="{{item}}" type="2"></wenda>
+    </view>
+  </scroll-view>
+
+  <view class="noData" wx:else>
+    <image src="/img/public/noData.png"></image>
+    <view>暂无评价</view>
+  </view>
+</view>

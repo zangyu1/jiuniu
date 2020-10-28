@@ -1,0 +1,44 @@
+.whole_header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  color: #000000;
+  font-weight: 900;
+}
+
+.whole_header.type1{
+  color: #000000;
+}
+
+.whole_header.type2{
+  color: #ffffff;
+}
+
+.header{
+  width: 100%;
+  font-size: 15px;
+  letter-spacing: 2rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 27rpx;
+}
+
+.header image{
+  width: 37rpx;
+  height: 51rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+
+.header .title{
+  width: 8em;
+  text-align: center;
+}
+
+.right{
+  width: 37rpx;
+  height: 51rpx;
+}

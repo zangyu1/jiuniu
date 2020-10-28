@@ -1,0 +1,171 @@
+<view class="container">
+  <navigationBar wx:if="{{scrollTop==0}}" title="老师详情" type="2" opacity="0"></navigationBar>
+
+  <view class="top {{showAll}}">
+    <image class="bgimg" mode="widthFix" src="https://www.jiuniuwenjin.com:8080/pic/20200926/202009262121016464.png"></image>
+    <view class="neirong">
+      <view class="tea">
+        <view class="user">
+          <image class="header" src="{{imgUrl+msg.headUrl}}"></image>
+          <view>
+            <view class="name">{{msg.teacherName}}</view>
+            <view class="ren">
+              <image wx:if="{{msg.education}}" bindtap="showRen" data-i="1" src="/img/consult/ren1.png"></image>
+              <image wx:if="{{msg.platform}}" bindtap="showRen" data-i="2" src="/img/consult/ren2.png"></image>
+            </view>
+          </view>
+        </view>
+        <image wx:if="{{hasAudio&&!isPlay}}" bindtap="play" class="yuyin" src="/img/consult/yuyin.png"></image>
+        <image wx:if="{{hasAudio&&isPlay}}" bindtap="stop" class="yuyin" src="/img/consult/yuyin2.gif"></image>
+      </view>
+
+      <view class="chengji">
+        <view class="text"><text>{{msg.showAskCount}}人</text> 咨询</view><view class="line"></view>
+        <!-- <view class="text"><text>{{msg.workYear}}年</text> 从业经验</view><view class="line"></view> -->
+        <view class="text"><text>{{msg.showAttentionCount}}人</text> 关注</view>
+      </view>
+
+      <view class="guoji">
+        <view>{{msg.areaName}}</view><view class="line"></view><view>{{msg.descs}}</view>
+      </view>
+
+      <view class="labels">
+        <view wx:for="{{msg.labelList}}" wx:key="i">{{item}}</view>
+      </view>
+
+      <view bindtap="show" wx:if="{{!showAll}}" class="more">
+        <image src="/img/consult/more.png"></image><view>详细资料</view>
+      </view>
+
+      <view wx:else>
+        <view class="part">
+          <view class="title"><image src="/img/consult/icon1.png"></image>资质(经历)</view>
+          <view class="content">
+            <view>
+              <view class="lists" wx:for="{{msg.teacherAttrList}}" wx:key="i">
+                <view class="first"><view></view><view></view></view>
+                <view class="two">
+                  <view>{{item.graduationTime}}年</view><view>{{item.graduationSchool}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="part">
+          <view class="title"><image src="/img/consult/icon2.png"></image>擅长领域</view>
+          <view class="content">
+            <view>
+              <view class="lists lists1" wx:for="{{msg.goodAreaList}}" wx:key="i">
+                <view class="letitle">{{item.iconName}}  |</view>
+                <view class="jishi">{{item.goodDesc}}</view>
+              </view>
+            </view>
+          </view>
+        <view class="part">
+          <view class="title"><image src="/img/consult/icon3.png"></image>咨询人群</view>
+          <view class="content">
+            <view class="textone">
+              <view wx:for="{{msg.askPeopleList}}" wx:key="i">#{{item.dictName}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="part">
+          <view class="title"><image src="/img/consult/icon4.png"></image>服务介绍</view>
+            <view class="content">
+              <view>
+                <view class="lists lists1" wx:for="{{msg.serviceList}}" wx:key="i">
+                  <view class="letitle">{{item.iconName}}  |</view>
+                  <view class="jishi">{{item.serviceDesc}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view bindtap="hide" class="hide">
+          <image class="hidebg" src="/img/consult/hidebg.png"></image>
+          <image class="hideimg" src="/img/consult/hide.png"></image>
+        </view>
+      </view>
+
+      
+    </view>
+  </view>
+
+  <view hidden="{{showAll}}" class="main">
+    <view class="fuwu">
+      <view class="futitle">
+        <view>服务</view>
+        <view bindtap="goNew"><image src="/img/consult/bidu.png"></image><view>咨询必读</view></view>
+      </view>
+      <view wx:if="{{shiting}}" bindtap="choice" data-i="{{shiting.askMethodId}}" class="shiting {{fuIndex==shiting.askMethodId}}">
+        <view class="tui">新用户推荐</view>
+        <image class="choice" wx:if="{{fuIndex==shiting.askMethodId}}" src="/img/consult/choice2.png"></image>
+        <image class="choice" wx:else src="/img/consult/choice.png"></image>
+        <view class="center">
+          <image src="/img/consult/zixun1.png"></image>
+          <view>
+            <view class="wutitle">{{shiting.methodName}}</view><view class="price">{{shiting.showPrice}}元/{{shiting.methodTime}}分钟</view>
+          </view>
+        </view>
+        <view class="last">低价试听，新用户首选</view>
+      </view>
+    </view>
+
+    <view class="sanfuwu" wx:if="{{typeList.length>0}}">
+      <view wx:for="{{typeList}}" wx:key="i" bindtap="choice" data-i="{{item.askMethodId}}" class="one {{fuIndex==item.askMethodId}}">
+        <image class="icon" src="/img/consult/zixun{{item.askMethodId}}.png"></image>
+        <view class="wutitle">{{item.methodName}}</view><view class="price">{{item.showPrice}}元/{{item.methodTime}}分钟</view>
+        <image class="choice" wx:if="{{fuIndex==item.askMethodId}}" src="/img/consult/choice2.png"></image>
+        <image class="choice" wx:else src="/img/consult/choice.png"></image>
+        <view class="huiline" wx:if="{{index<typeList.length-1}}"></view>
+      </view>
+    </view>
+
+    <view class="yuyue">
+      <view>预约时段</view><view>提供工作日及周末全天的咨询，但需要经过双方协商后确认，方可进行咨询。</view>
+    </view>
+
+    <view class="pingjia">
+      <view class="pjtitle">
+        <view><text>评价</text>（{{pingNums}}）</view>
+        <view bindtap="goPing">全部<image src="/img/public/go2.png"></image></view>
+      </view>
+      
+      <view class="pjlist" wx:for="{{pingLists}}" wx:key="i">
+        <evaluate type="2" msg="{{item}}" teaMsg="{{msg}}"></evaluate>
+      </view>
+    </view>
+
+    <view class="pingjia">
+      <view class="pjtitle">
+        <view><text>动态</text>（{{dongNums}}）</view>
+        <view bindtap="goDong">全部<image src="/img/public/go2.png"></image></view>
+      </view>
+      
+      <view class="pjlist" wx:for="{{dongLists}}" wx:key="i">
+        <wenda type="6" msg="{{item}}"></wenda>
+      </view>
+    </view>
+  </view>
+
+  <view class="buy" hidden="{{showAll}}">
+    <view>
+      <image bindtap="collect" data-i="2" wx:if="{{msg.collectType}}" src="/img/public/xin2.png"></image>
+      <image bindtap="collect" data-i="1" wx:else src="/img/public/xin1.png"></image>
+      <view>关注</view>
+    </view>
+    <view class="botbtns">
+      <view class="botbtn">
+      联系客服
+      <button open-type="contact" send-message-title="教师详情" show-message-card="true"></button></view>
+      <view class="botbtn" bindtap="buy">预约咨询</view>
+    </view>
+  </view>
+
+  <view class="renzheng" bindtap="hideRen" wx:if="{{showRen>0}}">
+    <image src="/img/consult/renzh{{showRen}}.png"></image>
+  </view>
+</view>

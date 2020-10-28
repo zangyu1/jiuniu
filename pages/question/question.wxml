@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<scroll-view bindrefresherrefresh="pullDownRefresh" refresher-triggered="{{isEnd}}" refresher-enabled="true" class="container" scroll-y="true" bindscrolltolower="selList">
+  <navigationBar has_back="{{false}}" title="社区"></navigationBar>
+
+  <!-- 标题分类 -->
+  <view class="fenlei">
+    <view class="fenLists">
+      <view wx:for="{{fenlei}}" bindtap="clickFen" data-i="{{index}}" wx:key="i" class="{{fenIndex==index}}">
+        {{item}} <view wx:if="{{fenIndex==index}}" class="dise"></view>
+      </view>
+    </view>
+    
+    <view class="kefu">
+      <view>
+        <image src="/img/public/kefu.png"></image>
+        <view>客服</view>
+        <button open-type="contact" send-message-title="社区" show-message-card="true"></button>
+      </view>
+    </view>
+  </view>
+
+  <view class="wenda" hidden="{{fenIndex!=0}}">
+    <!-- 搜索 -->
+    <view class="search">
+      <view class="searchLeft" bindtap="goToSearch">
+        <icon class="icon-small" type="search" size="14" color="#666666"></icon><view>输入关键词搜索问题</view>
+      </view>
+    </view>
+    <view class="top">
+      <!-- banner轮播图 -->
+      <swiper class="banner" indicator-dots="true" autoplay="true" indicator-color="rgba(255,255,255,0.3)" indicator-active-color="#ffffff" circular="true">
+        <swiper-item wx:for="{{bannerArr}}" bindtap="goDetail" data-item="{{item}}" wx:key="i">
+          <image class="bannerImg" src='{{item.imageUrl}}'></image>
+        </swiper-item>
+      </swiper>
+      
+      <view class="main">
+        <scroll-view class="titleList" scroll-x="true" scroll-with-animation="true" scroll-left="{{(tuiIndex - 1) * 207}}rpx">
+          <view class="titleAll">
+            <image mode="widthFix" bindtap="choiceTitle" data-i="{{index}}" wx:for="{{titleArr}}" wx:key="i" src="{{imgUrl}}{{tuiIndex==index?item.checkedUrl:item.uncheckUrl}}"></image>
+          </view>
+        </scroll-view>
+        <view class="lists">
+          <view class="list" wx:for="{{lists}}" wx:key="i">
+            <wenda type="4" msg="{{item}}"></wenda>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 视频 -->
+  <view hidden="{{fenIndex!=1}}">
+    <view wx:if="{{shareVideo.id}}" class="video"><shipin msg="{{shareVideo}}"></shipin></view>
+    <view class="video" wx:for="{{lists2}}" wx:key="i">
+      <shipin msg="{{item}}"></shipin>
+    </view>
+    <view class="nodata" wx:if="{{lists2.length==0&&!shareVideo.id}}">暂无视频</view>
+  </view>
+</scroll-view>
+

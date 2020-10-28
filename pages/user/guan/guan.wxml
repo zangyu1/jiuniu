@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <navigationBar title="我的关注"></navigationBar>
+  <view class="title">
+    <view class="{{tindex==1}}" bindtap="choice" data-i="1">老师</view>
+    <view class="{{tindex==2}}" bindtap="choice" data-i="2">问答</view>
+  </view>
+
+  <scroll-view style="height: calc(100% - {{statusH+titleH}}px - 80rpx);" scroll-y="true" bindscrolltolower="selData" wx:if="{{lists.length>0}}" class="main">
+    <view wx:if="{{tindex==1}}" class="one" wx:for="{{lists}}" wx:key="i"> 
+      <teacher bind:del="selData" msg="{{item}}"></teacher>
+    </view>
+    <view wx:if="{{tindex==2}}" class="one" wx:for="{{lists}}" wx:key="i"> 
+      <wenda bind:del="selData" msg="{{item}}"></wenda>
+    </view>
+  </scroll-view>
+
+  <view class="noData" wx:else>
+    <image src="/img/public/noData.png"></image>
+    <view>暂无关注</view>
+  </view>
+</view>

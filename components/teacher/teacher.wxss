@@ -1,0 +1,116 @@
+.teacher{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 28rpx 0 35rpx;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.teacher1,.teacher2{
+  height: 141rpx;
+}
+
+.header{
+  width: 84rpx;
+  height: 84rpx;
+  border-radius: 42rpx;
+}
+
+.right{
+  width: calc(100% - 100rpx);
+}
+
+.top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.close{
+  font-size:22rpx;
+  color:rgba(151,151,151,1);
+}
+
+.jieshao{
+  font-size:24rpx;
+  color:rgba(102,102,102,1);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.left{
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #002247;
+}
+
+.name{
+  font-size: 27rpx;
+  color: #333333;
+  margin-right: 25rpx;
+  font-weight: bold;
+}
+
+.xian{
+  margin: 0 15rpx;
+  height: 22rpx;
+  width: 2rpx;
+  background-color: #E8EBED;
+}
+
+.teacher3{
+  height: 218rpx;
+}
+
+.teacher3 .header{
+  width: 158rpx;
+  height: 158rpx;
+  flex-shrink: 0;
+  margin-right: 15rpx;
+  border-radius: 79rpx;
+}
+
+.teacher3 .right{
+  width: calc(100% - 168rpx);
+}
+
+.addr{
+  color: #333333;
+}
+
+.bottom{
+  margin-top: 25rpx;
+  display: flex;
+}
+
+.labels{
+  width: calc(100% - 100rpx);
+  display: flex;
+}
+
+.labels view{
+  padding: 0 15rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  border-radius: 18rpx;
+  background-color: #F4F5F8;
+  font-size: 20rpx;
+  color: #8A9399;
+  margin-right: 9rpx;
+}
+
+.labels view:last-child{
+  margin-right: 0;
+}
+
+.price{
+  width: 100rpx;
+  font-size: 29rpx;
+  color: #FFA82B;
+  font-weight: bold;
+  text-align: right;
+}
